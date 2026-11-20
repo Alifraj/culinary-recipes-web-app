@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes - Accueil</title>
+    <link rel="stylesheet" href="cuisine.css">
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Site Recettes 🍜</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="ajouter.html">Ajouter une recette</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="three-column">
+        <section class="hero-section">
+            <h1>Trouvez la Recette Parfaite !</h1>
+            <p>Plus de 1000 plats à découvrir, filtrer et partager.</p>
+            <div class="search-container">
+                <input type="text" id="recipe-search" placeholder="Rechercher par nom ou ingrédient...">
+                <button type="submit">Rechercher</button>
+            </div>
+
+            <lottie-player 
+                src="./assets/chef.json" 
+                background="transparent" 
+                speed="1" 
+                style="width: 150px; height: 150px; margin: 20px auto;" 
+                loop 
+                autoplay
+                id="search-lottie">
+            </lottie-player>
+            
+        </section>
+
+        <section class="popular-recipes">
+            <h2>Les Recettes du Moment</h2>
+            <div class="recipes-grid">
+    
+    <article class="recipe-card">
+        <img src="./assets/tandori.png" alt="Image de la Recette 1">
+        <h3>Poulet Tandoori Rapide</h3>
+        <p class="description">Un classique indien, prêt en moins de 30 minutes.</p>
+        <div class="meta">
+            <span class="difficulty">Facile</span>
+            <span class="time">30 min</span>
+        </div>
+        <a href="recette-1.html" class="details-link">Voir la recette</a>
+    </article>
+
+    <article class="recipe-card">
+        <img src="./assets/mousseauchocolat.png" alt="Image de la Recette 2">
+        <h3>Mousse au Chocolat Intense</h3>
+        <p class="description">Légère, aérienne et riche en cacao. Parfait pour les desserts.</p>
+        <div class="meta">
+            <span class="difficulty">Intermédiaire</span>
+            <span class="time">45 min</span>
+        </div>
+        <a href="recette-2.html" class="details-link">Voir la recette</a>
+    </article>
+
+    <article class="recipe-card">
+        <img src="./assets/salade.png" alt="Image de la Recette 3">
+        <h3>Salade Quinoa et Avocat</h3>
+        <p class="description">Une entrée végétarienne fraîche, saine et pleine de saveurs.</p>
+        <div class="meta">
+            <span class="difficulty">Facile</span>
+            <span class="time">15 min</span>
+        </div>
+        <a href="recette-3.html" class="details-link">Voir la recette</a>
+    </article>
+
+</div>
+        </section>
+
+        <section class="recipe-categories">
+            <h2>Explorer par Catégorie</h2>
+            <div class="categories-list">
+                <a href="#" class="category-link">Entrées</a>
+                <a href="#" class="category-link">Plats Principaux</a>
+                <a href="#" class="category-link">Desserts</a>
+                <a href="#" class="category-link">Végétarien</a>
+            </div>
+        </section>
+</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Site Web pour des Recettes de Cuisine</p>
+        <div class="social-links">
+            </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toutes les Recettes - Site de Cuisine</title>
+    <link rel="stylesheet" href="cuisine.css">
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Site Recettes 🍜</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="ajouter.html">Ajouter une recette</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="all-recipes-page">
+        
+        <section class="page-hero">
+            <h1>Toutes nos Recettes</h1>
+            <p>Explorez et filtrez parmi notre collection complète de plats.</p>
+        </section>
+
+        <div class="content-wrapper">
+            
+            <aside class="filter-panel">
+                <h2>Filtrer les résultats</h2>
+
+                <div class="filter-group">
+                    <label for="filter-category">Catégorie</label>
+                    <select id="filter-category">
+                        <option value="all">Toutes</option>
+                        <option value="Entrées">Entrées</option>
+                        <option value="Plats Principaux">Plats Principaux</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Végétarien">Végétarien</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Difficulté</label>
+                    <div class="radio-group">
+                        <input type="radio" id="diff-all" name="difficulty" value="all" checked> <label for="diff-all">Toutes</label>
+                        <input type="radio" id="diff-facile" name="difficulty" value="Facile"> <label for="diff-facile">Facile</label>
+                        <input type="radio" id="diff-intermediaire" name="difficulty" value="Intermédiaire"> <label for="diff-intermediaire">Intermédiaire</label>
+                        <input type="radio" id="diff-difficile" name="difficulty" value="Difficile"> <label for="diff-difficile">Difficile</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-time">Temps de Préparation Max : <span id="time-value">60 min</span></label>
+                    <input type="range" id="filter-time" min="5" max="180" value="60" step="5">
+                </div>
+                
+                <button id="apply-filters-btn">Appliquer les Filtres</button>
+                <button id="reset-filters-btn" class="secondary-btn">Réinitialiser</button>
+
+                <lottie-player 
+                    src="./assets/Recipes book animation.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 100px; height: 100px; margin: 30px auto 0;" 
+                    loop 
+                    autoplay 
+                    id="filter-lottie">
+                </lottie-player>
+
+            </aside>
+
+            <section class="recipe-results">
+                <div class="recipes-grid">
+                    </div>
+                
+                <div class="pagination-controls">
+                    <button id="prev-page-btn" disabled>Précédent</button>
+                    <span id="page-info">Page 1 de X</span>
+                    <button id="next-page-btn">Suivant</button>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Site Web pour des Recettes de Cuisine</p>
+        <div class="social-links">
+            </div>
+    </footer>
+
+</body>
+</html>

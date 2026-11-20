@@ -1,0 +1,281 @@
+/* ====================================================================
+   STYLES GÉNÉRAUX (À AJUSTER SI DÉJÀ EXISTANTS)
+   ==================================================================== */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff7f50; /* Couleur principale (Corail) */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+header .logo {
+    color: #ff7f50;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #ff7f50;
+    color: white;
+    border-radius: 5px;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* ====================================================================
+   STYLES DES FORMULAIRES (COMMUNS)
+   ==================================================================== */
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* IMPORTANT pour que padding n'augmente pas la taille */
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ff7f50;
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5);
+    outline: none;
+}
+
+/* Styles pour les messages d'erreur spécifiques sous les champs */
+.error-text {
+    color: #d9534f; /* Rouge pour l'erreur */
+    font-size: 0.9em;
+    display: block; /* S'assure qu'il prend sa propre ligne */
+    margin-top: 5px;
+}
+
+/* Bordure rouge pour l'input et le label lorsque le form-group a la classe .error */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+    border-color: #d9534f;
+    box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+}
+
+.form-group.error label {
+    color: #d9534f;
+}
+
+
+/* --- Bouton Primaire (Soumettre) --- */
+.primary-btn {
+    background-color: #ff7f50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%; /* S'étale sur toute la largeur dans le formulaire */
+}
+
+.primary-btn:hover {
+    background-color: #ff6347; /* Tomate */
+}
+
+.primary-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* --- Message de notification (succès/erreur général) --- */
+#contact-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-summary {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* ====================================================================
+   STYLES SPÉCIFIQUES À LA PAGE CONTACT (contact.html)
+   ==================================================================== */
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    /* Gère le responsive: passe à la ligne si l'espace manque */
+    flex-wrap: wrap; 
+}
+
+.contact-form-container {
+    flex: 2; /* Donne plus d'espace au formulaire */
+    min-width: 350px;
+}
+
+.contact-info {
+    flex: 1; /* Donne moins d'espace aux informations */
+    min-width: 300px;
+    padding: 30px;
+    background-color: #ffffff; /* Fond blanc pour les coordonnées */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Ombre légère */
+    height: fit-content; /* S'adapte au contenu */
+}
+
+.contact-info h2 {
+    color: #333;
+    border-bottom: 2px solid #ff7f50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    margin-top: 25px;
+    color: #ff7f50;
+}
+
+.contact-info p, 
+.contact-info a {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: #ff7f50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    margin-right: 15px;
+    /* Utilise la couleur du corps du texte pour ne pas surcharger */
+    color: #666; 
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff7f50;
+}
+
+/* --- Style de l'animation Lottie --- */
+.lottie-logo {
+    margin: 20px auto 30px auto;
+    /* Assurez-vous que le conteneur lottie ne perturbe pas la mise en page */
+    max-width: 350px; 
+}
+
+/* ====================================================================
+   MEDIA QUERIES (Rendre la mise en page responsive)
+   ==================================================================== */
+
+@media (max-width: 768px) {
+    /* Sur les petits écrans, les éléments de contact s'empilent */
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contact-form-container, 
+    .contact-info {
+        min-width: 100%;
+    }
+    
+    /* Réduire la taille de l'animation pour les petits écrans */
+    .lottie-logo {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Site Recettes</title>
+    <link rel="stylesheet" href="cuisine.css"> 
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Site Recettes 🍜</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="ajouter.html">Ajouter une recette</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <h1>Nous Contacter</h1>
+        <p class="subtitle">Des questions, des suggestions, ou un problème ? Envoyez-nous un message !</p>
+
+        <section class="contact-content">
+            
+            <div class="contact-form-container">
+                <div id="contact-message" class="hidden message-box"></div>
+
+                <form id="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="contact-name">Votre Nom *</label>
+                        <input type="text" id="contact-name" required>
+                        <small class="error-text" id="contact-name-error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Votre Email *</label>
+                        <input type="email" id="contact-email" required>
+                        <small class="error-text" id="contact-email-error"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-subject">Sujet *</label>
+                        <input type="text" id="contact-subject" required>
+                        <small class="error-text" id="contact-subject-error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message-body">Message *</label>
+                        <textarea id="contact-message-body" rows="6" required></textarea>
+                        <small class="error-text" id="contact-message-body-error"></small>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Envoyer le Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Coordonnées et Support</h2>
+                
+                <div class="lottie-logo">
+                    <lottie-player 
+                        src="./assets/contact.json" 
+                        background="transparent" 
+                        speed="1" 
+                        style="width: 100%; height: 300px; margin: 0 auto;" 
+                        loop 
+                        autoplay
+                    ></lottie-player>
+                </div>
+                
+                <p>📧 Email : <a href="mailto:contact@siterecettes.com">contact@siterecettes.com</a></p>
+                <p>📞 Téléphone : +33 1 23 45 67 89</p>
+                
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank">Facebook</a> | 
+                    <a href="#" target="_blank">Instagram</a> |
+                    <a href="#" target="_blank">Twitter</a>
+                </div>
+            </div>
+            
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Site Web pour des Recettes de Cuisine</p>
+    </footer>
+
+</body>
+</html>

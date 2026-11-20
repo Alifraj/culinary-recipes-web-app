@@ -1,0 +1,941 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-primary: #FF7F50; 
+    --color-secondary: #4CAF50; 
+    --color-text: #333;
+    --color-light: #f9f9f9;
+    --color-dark: #1f1f1f;
+}
+ body {
+    overflow-x: hidden; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* --- 2. HEADER ET NAVIGATION --- */
+
+.main-header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: var(--color-dark);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- 3. SECTION HÉRO (Moteur de Recherche) --- */
+
+.hero-section {
+    text-align: center;
+    padding: 80px 5% 40px;
+    background: linear-gradient(135deg, var(--color-light) 0%, #fff 100%);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    color: var(--color-text);
+    margin-bottom: 30px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-search {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-container button {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+
+.search-container button:hover {
+    background-color: #388E3C; 
+}
+
+
+#search-lottie {
+    display: block; 
+}
+
+/* --- 4. SECTIONS PRINCIPALES ET FOOTER --- */
+
+main {
+    padding: 40px 5%;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-primary);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+.recipe-categories {
+    margin-top: 60px;
+}
+
+.categories-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; 
+}
+
+.category-link {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+
+.category-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+
+/* Pour les appareils de taille moyenne (Tablettes) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+    
+    .main-nav {
+        margin-top: 10px;
+    }
+
+    .main-nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .search-container {
+        flex-direction: column;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: none; 
+    }
+
+    #recipe-search {
+        border: 1px solid #ccc;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .search-container button {
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+/* Pour les petits appareils (Mobiles) */
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+}
+/* --- 6. GRILLE DE RECETTES (Flexbox/Grid pour le responsive) --- */
+
+.recipes-grid {
+    display: grid;
+    /* Crée une grille avec des colonnes qui s'ajustent automatiquement (responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-card h3 {
+    font-size: 1.4em;
+    color: var(--color-dark);
+    margin: 15px 0 5px;
+    padding: 0 15px;
+}
+
+.recipe-card .description {
+    color: #666;
+    font-size: 0.95em;
+    padding: 0 15px 15px;
+}
+
+.recipe-card .meta {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 15px;
+    border-top: 1px solid var(--color-light);
+    font-size: 0.9em;
+    color: #888;
+}
+
+.recipe-card .difficulty {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.recipe-card .details-link {
+    display: block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-card .details-link:hover {
+    background-color: var(--color-dark);
+}
+/* --- Styles spécifiques à la page de toutes les recettes (recettes.html) --- */
+
+.all-recipes-page {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.page-hero {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.page-hero h1 {
+    font-size: 2.5em;
+    color: var(--color-dark);
+}
+
+.page-hero p {
+    color: #666;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 100%;
+}
+
+
+.filter-panel {
+    flex: 0 0 250px; 
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content; 
+    position: sticky;
+    top: 80px; 
+}
+
+.filter-panel h2 {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.filter-panel h2::after {
+    display: none;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+
+.filter-group select,
+.filter-group input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style des Radios pour la Difficulté */
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Boutons d'action */
+#apply-filters-btn, #reset-filters-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#apply-filters-btn {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+#apply-filters-btn:hover {
+    background-color: #e66730; 
+}
+
+#reset-filters-btn {
+    background-color: #eee;
+    color: var(--color-dark);
+}
+
+#reset-filters-btn:hover {
+    background-color: #ccc;
+}
+
+
+.recipe-results {
+    flex-grow: 1; 
+}
+
+
+.recipe-results .recipes-grid {
+    padding: 0;
+}
+
+
+.pagination-controls {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.pagination-controls button {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background-color: #388E3C;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#page-info {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+
+/* --- Responsive pour les tablettes/mobiles (Casser la barre latérale) --- */
+
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column; 
+    }
+
+    .filter-panel {
+        flex: 1 1 auto; 
+        position: static; 
+    }
+}
+
+/* --- Styles spécifiques à la page Ajouter une Recette (ajouter.html) --- */
+
+.add-recipe-page {
+    padding: 20px 0;
+    background-color: #f7f7f7;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Style des sections et légende */
+.form-section {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.form-section legend {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--color-primary); 
+    padding: 0 10px;
+    margin-left: -10px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.form-group input:not([type="radio"]),
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 5px rgba(var(--color-primary-rgb), 0.5);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .half-width {
+    flex: 1; 
+}
+
+.radio-group-horizontal {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.radio-group-horizontal label {
+    font-weight: 400; 
+}
+
+
+#submit-recipe-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-secondary);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-recipe-btn:hover {
+    background-color: #388E3C; 
+}
+
+/* --- Styles pour la Validation JS (Messages d'erreur et succès) --- */
+
+.error-text {
+    color: #cc0000;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block; 
+    height: 1.2em; 
+}
+
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+    border-color: #cc0000;
+}
+
+.message-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.message-box.success {
+    background-color: #e6ffe6; 
+    border: 1px solid #00aa00;
+    color: #00aa00;
+}
+
+.message-box.error-summary {
+    background-color: #ffe6e6;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-container {
+        padding: 20px;
+        margin: 15px;
+    }
+}
+
+#image-preview {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; 
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    object-fit: cover;
+}
+/* --- Contact Page Styles --- */
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    
+    flex-wrap: wrap; 
+}
+
+.contact-form-container, 
+.contact-info {
+    flex: 1; 
+    min-width: 300px;
+}
+
+
+.contact-info {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+    color: #333;
+    border-bottom: 2px solid #ff7f50;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info p, 
+.contact-info a {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.social-links a {
+    margin-right: 15px;
+    color: #ff7f50;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+.lottie-logo {
+    margin-bottom: 20px;
+    
+    max-width: 400px; 
+}
+
+/* 
+   STYLES SPÉCIFIQUES À LA PAGE CONTACT (contact.html)
+  
+
+/* --- 1. Titres et Structure Générale --- */
+
+
+.contact-page h1 {
+    font-size: 2.5em;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.contact-page h1::after {
+    
+    display: none; 
+}
+
+.contact-page .subtitle {
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* --- 2. Conteneur principal  --- */
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    
+    flex-wrap: wrap; 
+    max-width: 1000px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form-container {
+    flex: 2; 
+    min-width: 300px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+    flex: 1; 
+    min-width: 250px;
+    padding: 30px;
+    background-color: var(--color-light); 
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+
+.contact-form-container .primary-btn {
+    
+    background-color: var(--color-secondary); 
+    color: white;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-form-container .primary-btn:hover {
+    background-color: #388E3C; 
+}
+
+/* Messages de Notification */
+#contact-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.success {
+    background-color: #e6ffe6; 
+    color: var(--color-secondary);
+    border: 1px solid #c3e6cb;
+}
+
+.error-summary {
+    background-color: #ffe6e6; 
+    color: #cc0000;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- 4. Styles du Bloc Coordonnées (contact-info) --- */
+
+.contact-info h2 {
+    font-size: 1.4em;
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.contact-info p, 
+.contact-info a {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+
+
+.lottie-logo {
+    margin: 20px auto 30px auto;
+    max-width: 350px;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    color: var(--color-text); 
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primary); 
+}
+
+/* --- 6. Responsive (contact.html) --- */
+
+@media (max-width: 900px) {
+    .contact-content {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    
+    .contact-form-container, 
+    .contact-info {
+        min-width: 100%;
+    }
+    
+    .contact-info {
+        
+        order: -1; 
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container, .contact-info {
+        padding: 20px;
+    }
+}
+
+
+
+.three-column {
+    
+    display: grid;
+    
+   
+    grid-template-columns: 1fr 1fr 1fr; 
+    
+   
+    gap: 40px;
+    
+   
+    max-width: 1200px;
+    margin: 50px auto; 
+    padding: 0 5%;
+}
+
+
+
+@media (max-width: 900px) {
+    .three-column {
+        
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .three-column {
+        
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

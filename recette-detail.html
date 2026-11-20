@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="recipe-page-title">Détail de la Recette - Site Recettes</title>
+    <link rel="stylesheet" href="cuisine.css"> 
+    <link rel="stylesheet" href="recette-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Site Recettes 🍜</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="ajouter.html">Ajouter une recette</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="recipe-detail-page">
+        
+        <div id="recipe-content-container">
+            </div>
+
+        <section class="comments-section">
+            <h2>Évaluations et Commentaires</h2>
+            
+            <div class="rating-summary" id="rating-summary">
+                </div>
+
+            <div class="add-comment-box">
+                <h3>Laisser votre Avis</h3>
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label>Votre Note :</label>
+                        <div class="star-rating" id="star-rating">
+                            <i class="fa fa-star star" data-value="5"></i>
+                            <i class="fa fa-star star" data-value="4"></i>
+                            <i class="fa fa-star star" data-value="3"></i>
+                            <i class="fa fa-star star" data-value="2"></i>
+                            <i class="fa fa-star star" data-value="1"></i>
+                            <input type="hidden" name="rating" id="comment-rating-input" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment-author">Votre Nom *</label>
+                        <input type="text" id="comment-author" required>
+                        <small class="error-text" id="comment-author-error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment-text">Votre Commentaire *</label>
+                        <textarea id="comment-text" rows="4" required></textarea>
+                        <small class="error-text" id="comment-text-error"></small>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Publier</button>
+                    <div id="comment-message" class="message-box hidden"></div>
+                </form>
+            </div>
+
+            <div class="comments-list" id="comments-list">
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Site Web pour des Recettes de Cuisine</p>
+    </footer>
+
+</body>
+</html>

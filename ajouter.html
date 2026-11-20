@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une Recette - Site de Cuisine</title>
+    <link rel="stylesheet" href="cuisine.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Site Recettes 🍜</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="ajouter.html">Ajouter une recette</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="add-recipe-page">
+        <section class="page-hero">
+            <h1>Partagez Votre Recette !</h1>
+            <p>Remplissez les champs ci-dessous pour ajouter votre création culinaire à notre collection.</p>
+        </section>
+
+        <div class="form-container">
+            <form id="add-recipe-form">
+                
+                <div id="form-message" class="message-box hidden"></div>
+
+                <fieldset class="form-section">
+                    <legend>Informations de Base</legend>
+
+                    <div class="form-group">
+                        <label for="recipe-name">Nom de la recette *</label>
+                        <input type="text" id="recipe-name" required>
+                        <small class="error-text" id="name-error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-description">Description Courte *</label>
+                        <textarea id="recipe-description" rows="3" required></textarea>
+                        <small class="error-text" id="description-error"></small>
+                    </div>
+
+                    <div class="form-group">
+    <label for="recipe-image-file">Photo de la recette (Choisir une image) *</label>
+    <input type="file" id="recipe-image-file" accept="image/png, image/jpeg, image/webp" required>
+    <small class="error-text" id="recipe-image-file-error"></small>
+</div>
+
+<div class="form-group image-preview-container">
+    <label>Aperçu de l'image :</label>
+    <img id="image-preview" src="" alt="Aperçu de la recette" class="hidden">
+</div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Détails Techniques</legend>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="recipe-time">Temps de préparation (minutes) *</label>
+                            <input type="number" id="recipe-time" min="5" max="300" required>
+                            <small class="error-text" id="time-error"></small>
+                        </div>
+                        
+                        <div class="form-group half-width">
+                            <label for="recipe-category">Catégorie *</label>
+                            <select id="recipe-category" required>
+                                <option value="">-- Choisir une catégorie --</option>
+                                <option value="Entrées">Entrées</option>
+                                <option value="Plats Principaux">Plats Principaux</option>
+                                <option value="Desserts">Desserts</option>
+                                <option value="Végétarien">Végétarien</option>
+                            </select>
+                            <small class="error-text" id="category-error"></small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Difficulté *</label>
+                        <div class="radio-group-horizontal">
+                            <input type="radio" id="diff-facile" name="add-difficulty" value="Facile" required> <label for="diff-facile">Facile</label>
+                            <input type="radio" id="diff-intermediaire" name="add-difficulty" value="Intermédiaire"> <label for="diff-intermediaire">Intermédiaire</label>
+                            <input type="radio" id="diff-difficile" name="add-difficulty" value="Difficile"> <label for="diff-difficile">Difficile</label>
+                        </div>
+                        <small class="error-text" id="difficulty-error"></small>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Ingrédients *</legend>
+                    <div class="form-group">
+                        <label for="recipe-ingredients">Liste des ingrédients (Séparés par une virgule, ex: farine, sucre, oeufs)</label>
+                        <textarea id="recipe-ingredients" rows="4" required></textarea>
+                        <small class="error-text" id="ingredients-error"></small>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="submit-recipe-btn">Ajouter la Recette</button>
+
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Site Web pour des Recettes de Cuisine</p>
+        <div class="social-links">
+            </div>
+    </footer>
+
+</body>
+</html>
